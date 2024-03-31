@@ -11,4 +11,8 @@ class Category extends Model
 
     protected $fillable = ['content'];
 
+    public function getContent(){
+        return $this->content;
+    }
+
 }
