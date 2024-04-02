@@ -5,7 +5,10 @@
 @endsection
 
 @section('header')
-<button class="logout__button">logout</button>
+<form class="form" action="/logout" method="post">
+  @csrf
+  <button class="logout__button">logout</button>
+</form>
 <style>
 .header__inner {
   display:flex;
