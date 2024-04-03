@@ -46,21 +46,33 @@
     </div>
     <div class="search-form__button">
       <button class="search-form__button-submit" type="submit">検索</button>
-      <button class="search-form__button-submit" type="submit" name="reset" value="reset">リセット</button>
+      <button class="search-form__button-reset" type="submit" name="reset" value="reset">リセット</button>
     </div>
   </form>
+  <form action="/export" method="post">
+  @csrf
   <div class="export">
-    <button class="export__button">エクスポート</button>
+    <button class="export__button" type="submit">エクスポート</button>
   </div>
-    <div class="admin-table">
+  </form>
+  <div class="admin-table">
     {{ $contacts->links('vendor.pagination.contacts') }}
     <table class="admin-table__inner">
       <tr class="admin-table__row">
         <th class="admin-table__header">
           <span class="admin-table__header-span">お名前</span>
+        </th>
+        <th class="admin-table__header">
           <span class="admin-table__header-span">性別</span>
+        </th>
+        <th class="admin-table__header">
           <span class="admin-table__header-span">メールアドレス</span>
+        </th>
+        <th class="admin-table__header">
           <span class="admin-table__header-span">お問い合わせの種類</span>
+        </th>
+        <th class="admin-table__header">
+          <span></span>
         </th>
       </tr>
       @php
@@ -86,29 +98,27 @@
 
       <tr class="admin-table__row">
         <td class="admin-table__item">
-          <div class="update-form">
-            <div class="update-form__item">
-              <p class="update-form__itme-p">{{ $contact['last_name'] }} {{ $contact['first_name'] }}</p>
-              <input type="hidden" name="id" value="{{ $contact['id'] }}">
-            </div>
-            <div class="update-form__item">
-              <p class="update-form__itme-p">{{ $gender }}</p>
-            </div>
-            <div class="update-form__item">
-              <p class="update-form__itme-p">{{ $contact['email'] }}</p>
-            </div>
-            <div class="update-form__item">
-              @if ($content != '')
-                <p class="update-form__itme-p">{{ $content }}</p>
-              @endif
-            </div>
-            <div class="detail-form__button">
-              <button class="detail-form__button-submit" onclick="modalOpen({{ $count }})">詳細</button>
-            </div>
-          </div>
-          <!-- 詳細モーダル -->
-          @include('modal_detail')
+          <p class="admin-form__itme-p">{{ $contact['last_name'] }} {{ $contact['first_name'] }}</p>
+          <input type="hidden" name="id" value="{{ $contact['id'] }}">
         </td>
+        <td class="admin-table__item">
+          <p class="admin-form__itme-p">{{ $gender }}</p>
+        </td>
+        <td class="admin-table__item">
+          <p class="admin-form__itme-p">{{ $contact['email'] }}</p>
+        </td>
+        <td class="admin-table__item">
+          @if ($content != '')
+            <p class="admin-form__itme-p">{{ $content }}</p>
+          @endif
+        </td>
+        <td class="admin-table__item">
+          <div class="detail-form__button">
+            <button class="detail-form__button-submit" onclick="modalOpen({{ $count }})">詳細</button>
+          </div>
+        </td>
+        <!-- 詳細モーダル -->
+        @include('modal_detail')
       </tr>
       @php
         $count++;

@@ -21,3 +21,4 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin', [ContactController::class, 'admin']);
 });
 Route::get('/search', [ContactController::class, 'search']);
+Route::post('/export', [ContactController::class, 'exportCsv']);

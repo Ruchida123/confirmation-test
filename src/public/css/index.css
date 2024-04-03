@@ -19,8 +19,18 @@
 
 .form__group {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     margin-bottom: 15px;
+    text-align: left;
+}
+
+.form__group-title {
+    white-space: nowrap;
+    width: 35%;
+}
+
+.form__group-content {
+    width: 65%;
 }
 
 .form__label--item,
@@ -41,7 +51,7 @@
 .form__input--text input,
 .form__input--textarea textarea {
     padding: 10px;
-    width: 600px;
+    width: 100%;
     border: 1px solid #ddd;
     border-radius: 3px;
     appearance: none;
@@ -49,9 +59,27 @@
 
 .form__input--text--split,
 .form__select {
-    padding: 10px;
-    width: 600px;
+    width: 100%;
+    white-space: nowrap;
     appearance: none;
+}
+
+.form__input--text--split input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.form__input--text-name {
+    width: 45%;
+}
+
+.form__input--text-name:first-of-type {
+    margin-right: 10%;
+}
+
+.form__input--text-tell {
+    width: 31%;
 }
 
 .form__input--text input,
@@ -61,6 +89,10 @@
     height: 40px;
     background-color: #F4F4F4;
     border: none;
+}
+
+.item-select {
+    width: 50%;
 }
 
 ::placeholder {
@@ -85,12 +117,16 @@ select option {
 
 .form__input--radio{
     padding: 10px;
-    width: 600px;
+    width: 100%;
     color: #8B7969;
 }
 
 .form__input--radio input:checked {
     accent-color: #8B7969;
+}
+
+.form__input--radio label {
+    margin-right: 50px;
 }
 
 .form__button {
@@ -99,8 +135,8 @@ select option {
 
 .form__button-submit {
     padding: 10px;
-    width: 30%;
-    height: 50px;
+    width: 20%;
+    height: 45px;
     border: none;
     border-radius: 3px;
     background: #82756A;

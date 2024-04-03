@@ -18,8 +18,8 @@
       </div>
       <div class="form__group-content">
         <div class="form__input--text--split">
-          <input type="text" name="last_name" placeholder="例: 山田" value="{{ old('last_name') }}" />
-          <input type="text" name="first_name" placeholder="例: 太郎" value="{{ old('first_name') }}" />
+          <input class="form__input--text-name" type="text" name="last_name" placeholder="例: 山田" value="{{ old('last_name') }}" />
+          <input class="form__input--text-name" type="text" name="first_name" placeholder="例: 太郎" value="{{ old('first_name') }}" />
         </div>
         <div class="form__error">
           @error('last_name')
@@ -75,11 +75,11 @@
       </div>
       <div class="form__group-content">
         <div class="form__input--text--split">
-          <input type="text" name="tell1" placeholder="080" value="{{ old('tell1') }}" />
+          <input class="form__input--text-tell" type="text" name="tell1" placeholder="080" value="{{ old('tell1') }}" />
           <span>-</span>
-          <input type="text" name="tell2" placeholder="1234" value="{{ old('tell2') }}" />
+          <input class="form__input--text-tell" type="text" name="tell2" placeholder="1234" value="{{ old('tell2') }}" />
           <span>-</span>
-          <input type="text" name="tell3" placeholder="5678" value="{{ old('tell3') }}" />
+          <input class="form__input--text-tell" type="text" name="tell3" placeholder="5678" value="{{ old('tell3') }}" />
         </div>
         <div class="form__error">
           @error('tell1')

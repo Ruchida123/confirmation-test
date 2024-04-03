@@ -15,13 +15,13 @@
     <div class="thanks__content">
       <div class="thanks__heading">
         <h2>お問い合わせありがとうございました</h2>
+        <form class="form" action="/" method="get">
+          @csrf
+          <div class="form__button">
+            <button class="form__button-submit" type="submit">HOME</button>
+          </div>
+        </form>
       </div>
-      <form class="form" action="/" method="get">
-      @csrf
-      <div class="form__button">
-        <button class="form__button-submit" type="submit">HOME</button>
-      </div>
-    </form>
     </div>
   </main>
 </body>

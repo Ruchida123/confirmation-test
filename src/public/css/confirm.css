@@ -25,11 +25,14 @@
 }
 
 .confirm-table__header {
-    padding: 15px;
+    padding: 15px 30px;
     width: 20%;
     border-bottom: 1px solid #ddd;
-    background-color: #eee;
-    font-weight: bold;
+    background-color: #ab9684;
+    color: #fff;
+    font-weight: unset;
+    white-space: nowrap;
+    text-align: left;
 }
 
 .confirm-table__text {
@@ -41,6 +44,7 @@
     width: 100%;
     outline: none;
     border: none;
+    color: #8B7969;
 }
 
 .confirm-table__row:last-child .confirm-table__header,
@@ -55,11 +59,19 @@
 
 .form__button-submit {
     padding: 10px;
-    width: 30%;
+    width: 15%;
     height: 50px;
     border: none;
     border-radius: 3px;
-    background: #000;
+    background: #82756A;
     color: #fff;
     cursor: pointer;
+}
+
+.form__button-submit-modify {
+    border: none;
+    background: #fff;
+    color: #8B7969;
+    cursor: pointer;
+    text-decoration: underline;
 }

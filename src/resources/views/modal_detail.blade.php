@@ -6,36 +6,36 @@
     </div>
     <div class="modal-body">
       <div class="modal-item">
-        <span>お名前</span>
-        <span>{{ $contact['last_name'] }} {{ $contact['first_name'] }}</span>
+        <span class="modal-item-header">お名前</span>
+        <span class="modal-item-value">{{ $contact['last_name'] }} {{ $contact['first_name'] }}</span>
       </div>
       <div class="modal-item">
-        <span>性別</span>
-        <span>{{ $gender }}</span>
+        <span class="modal-item-header">性別</span>
+        <span class="modal-item-value">{{ $gender }}</span>
       </div>
       <div class="modal-item">
-        <span>メールアドレス</span>
-        <span>{{ $contact['email'] }}</span>
+        <span class="modal-item-header">メールアドレス</span>
+        <span class="modal-item-value">{{ $contact['email'] }}</span>
       </div>
       <div class="modal-item">
-        <span>電話番号</span>
-        <span>{{ $contact['tell'] }}</span>
+        <span class="modal-item-header">電話番号</span>
+        <span class="modal-item-value">{{ $contact['tell'] }}</span>
       </div>
       <div class="modal-item">
-        <span>住所</span>
-        <span>{{ $contact['address'] }}</span>
+        <span class="modal-item-header">住所</span>
+        <span class="modal-item-value">{{ $contact['address'] }}</span>
       </div>
       <div class="modal-item">
-        <span>建物名</span>
-        <span>{{ $contact['building'] }}</span>
+        <span class="modal-item-header">建物名</span>
+        <span class="modal-item-value">{{ $contact['building'] }}</span>
       </div>
       <div class="modal-item">
-        <span>お問い合わせの種類</span>
-        <span>{{ $content }}</span>
+        <span class="modal-item-header">お問い合わせの種類</span>
+        <span class="modal-item-value">{{ $content }}</span>
       </div>
       <div class="modal-item">
-        <span>お問い合わせ内容</span>
-        <span>{{ $contact['detail'] }}</span>
+        <span class="modal-item-header">お問い合わせ内容</span>
+        <span class="modal-item-value">{{ $contact['detail'] }}</span>
       </div>
     </div>
     <form class="delete-form" action="/todos/delete" method="post">
@@ -46,6 +46,7 @@
             <input type="hidden" name="id" value="{{ $contact['id'] }}">
         </div>
     </form>
+    <div class="blank"></div>
   </div>
 </div>
 
@@ -125,12 +126,23 @@ function outsideClose(e) {
 
 .modal-body {
   padding: 10px 20px;
-  color: black;
+  color: #8B7969;
 }
 
 .modal-item {
     display: flex;
     justify-content: space-around;
+    margin-bottom: 15px;
+}
+
+.modal-item-header {
+  font-weight: bold;
+  width: 50%;
+  margin-left: 50px;
+}
+
+.modal-item-value {
+  width: 50%;
 }
 
 .delete-form {
@@ -140,6 +152,7 @@ function outsideClose(e) {
 
 .delete-form__button {
     width: 50px;
+    margin: 10px auto;
 }
 
 .delete-form__button-submit {
@@ -150,6 +163,10 @@ function outsideClose(e) {
     background: #ff0000;
     color: #fff;
     cursor: pointer;
+}
+
+.blank {
+  height: 20px;
 }
 </style>
 @endsection

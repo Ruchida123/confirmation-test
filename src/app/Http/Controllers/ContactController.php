@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\ContactRequest;
 use App\Models\Contact;
 use App\Models\Category;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class ContactController extends Controller
 {
@@ -45,6 +46,29 @@ class ContactController extends Controller
         }
         $categories = Category::all();
         return view('admin', compact('contacts', 'categories'));
+    }
+
+    public function exportCsv(Request $request)
+    {
+        $contacts = Contact::all();
+        $csvHeader = ['id', 'category_id', 'first_name', 'last_name', 'gender', 'email', 'tell', 'address', 'building', 'detail', 'created_at', 'updated_at'];
+        $csvData = $contacts->toArray();
+
+        $response = new StreamedResponse(function () use ($csvHeader, $csvData) {
+            $handle = fopen('php://output', 'w');
+            fputcsv($handle, $csvHeader);
+
+            foreach ($csvData as $row) {
+                fputcsv($handle, $row);
+            }
+
+            fclose($handle);
+        }, 200, [
+            'Content-Type' => 'text/csv',
+            'Content-Disposition' => 'attachment; filename="contacts.csv"',
+        ]);
+
+        return $response;
     }
 
 }
