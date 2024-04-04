@@ -56,7 +56,9 @@
   </div>
   </form>
   <div class="admin-table">
-    {{ $contacts->links('vendor.pagination.contacts') }}
+    <div class="admin-table__pagination">
+      {{ $contacts->links('vendor.pagination.contacts') }}
+    </div>
     <table class="admin-table__inner">
       <tr class="admin-table__row">
         <th class="admin-table__header">
