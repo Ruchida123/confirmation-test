@@ -26,22 +26,22 @@
   <form class="search-form" action="/search" method="get">
     @csrf
     <div class="search-form__item">
-      <input class="search-form__item-input" type="text" name="keyword"
+      <input class="search-form__item-keyword" type="text" name="keyword"
         value="{{ old('keyword') }}" placeholder="名前やメールアドレスを入力してください"/>
-      <select class="search-form__item-select" name="gender">
+      <select class="search-form__item-gender" name="gender">
         <option value="">性別</option>
         <option value=0>全て</option>
         <option value=1>男性</option>
         <option value=2>女性</option>
         <option value=3>その他</option>
       </select>
-      <select class="search-form__item-select" name="category_id">
+      <select class="search-form__item-category" name="category_id">
         <option value="">お問い合わせの種類</option>
         @foreach ($categories as $category)
         <option value="{{ $category['id'] }}">{{ $category['content'] }}</option>
         @endforeach
       </select>
-      <input class="search-form__item-input" type="date" name="date"
+      <input class="search-form__item-date" type="date" name="date"
         value="{{ old('date') }}" placeholder="年/月/日"/>
     </div>
     <div class="search-form__button">

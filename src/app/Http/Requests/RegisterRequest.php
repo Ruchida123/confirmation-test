@@ -25,6 +25,7 @@ class RegisterRequest extends FormRequest
     {
         return [
             'name' => ['required'],
+            // TODO: メールアドレス形式チェック（未）
             'email' => ['required', 'email'],
             'password' => ['required'],
         ];

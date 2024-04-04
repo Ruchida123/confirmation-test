@@ -24,6 +24,7 @@ class LoginRequest extends FormRequest
     public function rules()
     {
         return [
+            // TODO: メールアドレス形式チェック（未）
             'email' => ['required', 'email'],
             'password' => ['required'],
         ];

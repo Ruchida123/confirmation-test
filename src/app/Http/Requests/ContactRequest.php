@@ -37,6 +37,7 @@ class ContactRequest extends FormRequest
     }
 
     public function withValidator(Validator $validator) {
+        // TODO: チェック処理の実施条件
         $validator->sometimes('tell2', 'required | numeric | digits_between:1,5', function() {
         //tell1がエラーではない場合
         return $this->input('tell1') != "";

@@ -62,6 +62,7 @@ function modalOpen(count) {
   modal.style.display = 'block';
 }
 
+// TODO: ２行目以降のモーダルが閉じれねい
 // バツ印がクリックされた時
 buttonClose.addEventListener('click', modalClose);
 function modalClose() {

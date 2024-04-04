@@ -50,6 +50,7 @@ class ContactController extends Controller
 
     public function exportCsv(Request $request)
     {
+        // TODO: 検索で絞り込んだ分をエクスポート（未）
         $contacts = Contact::all();
         $csvHeader = ['id', 'category_id', 'first_name', 'last_name', 'gender', 'email', 'tell', 'address', 'building', 'detail', 'created_at', 'updated_at'];
         $csvData = $contacts->toArray();
