@@ -38,7 +38,7 @@
         <span class="modal-item-value">{{ $contact['detail'] }}</span>
       </div>
     </div>
-    <form class="delete-form" action="/todos/delete" method="post">
+    <form class="delete-form" action="/delete" method="post">
         @method('DELETE')
         @csrf
         <div class="delete-form__button">

@@ -31,6 +31,11 @@ class ContactController extends Controller
         return view('thanks');
     }
 
+    public function destroy(Request $request) {
+        Contact::find($request->id)->delete();
+        return redirect('/admin');
+    }
+
     public function admin() {
         $contacts = Contact::Paginate(7);
         $categories = Category::all();
